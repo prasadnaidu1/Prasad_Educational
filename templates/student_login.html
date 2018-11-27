@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h4 style="background: green">
+    <marquee direction="right">  StudentLogin Details</marquee>
+<form action="/studentlogindetails/" method="post">
+    {% csrf_token %}
+    {% load staticfiles %}
+
+<table align="center" border="2">
+    <tr>
+        <th>Student login</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="Username" name="u1"  autocomplete="off" required>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="password" placeholder="Password" name="u2" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Login">
+        </td>
+    </tr>
+</table>
+    </form>
+    <img src="{% static 'images (3).jpg' %}" width="400" height="200">
+<img src="{% static 'images (4).jpg' %}" width="400" height="200">
+<img src="{% static 'images (5).jpg' %}" width="400" height="200">
+</body>
+</html>

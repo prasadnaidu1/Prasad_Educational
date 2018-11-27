@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load  staticfiles %}
+<table align="center" border="2">
+    <tr>
+
+            <th>Company IdNO</th>
+            <th>Company Name</th>
+            <th>Company HR Name</th>
+            <th>Company Email</th>
+            <th>Company ContactNo</th>
+            <th>Company Purpose</th>
+            <th>Company Address</th>
+
+    </tr>
+    {% for x in res %}
+        <tr>
+        <td>{{ x.c_id }}</td>
+        <td>{{ x.c_name }}</td>
+        <td>{{ x.c_hrname }}</td>
+        <td>{{ x.c_email }}</td>
+        <td>{{ x.c_contact }}</td>
+        <td>{{ x.c_purpose }}</td>
+        <td>{{ x.c_address }}</td>
+
+        </tr>
+    {% endfor %}
+<tr  >
+    <td colspan="7" align="center">
+        <form action="/companycsvfile/" method="post">
+            {% csrf_token %}
+        <input type="submit" value="Download">
+            </form>
+    </td>
+
+</tr>
+</table>
+</body>
+</html>

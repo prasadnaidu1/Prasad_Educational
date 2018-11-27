@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/studentwelcome/" method="post">
+    {% csrf_token %}
+<table align="center"  border="2">
+    <tr>
+        <td> Name:
+            <input type="text" placeholder="Name" name="a1"  autocomplete="off" required>
+        </td>
+    </tr>
+    <tr>
+        <td>Contact:
+            <input type="number" placeholder="Contact No" name="a2" autocomplete="off" required>
+        </td>
+    </tr>
+    <tr>
+    <td>Qualification:
+        <select name="a3">
+            <option>Qualification</option>
+            <option>B.Tech</option>
+            <option>Bsc(Computer)</option>
+            <option>MCA</option>
+            <option>M.Tech</option>
+            <option>Bcom (Computers)</option>
+        </select>
+    </td>
+</tr>
+    <tr>
+        <td>Course:<br>
+            <input type="checkbox" value="Python" name="a4">Python<br>
+            <input type="checkbox" value="Django" name="a4">Django<br>
+            <input type="checkbox" value="DataScience" name="a2">DataScience<br>
+            <input type="checkbox" value="PHP" name="a4">PHP<br>
+            <input type="checkbox" value="AWS" name="a4">AWS<br>
+            <input type="checkbox" value="Angular JS" name="a4">Angular JS<br>
+            <input type="checkbox" value="Java" name="a4">Java<br>
+            <input type="checkbox" value="UI Technologies" name="a4">UI Technologies<br>
+            <input type="checkbox" value="Hybernet" name="a4">Hybernet<br>
+            <input type="checkbox" value="Digital Marketing" name="a4">Digital Marketing<br>
+            (Choose Your Subjects)
+        </td>
+
+    <tr>
+    <td>Timinings:
+        <input type="time"  value="Time" name="a5" required>
+        (mention your preferable timinings)
+    </td>
+</tr>
+    <tr>
+        <td>
+            <input type="submit" value="Submit">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ status3 }}
+        </td>
+    </tr>
+</table>
+    </form>
+</body>
+</html>

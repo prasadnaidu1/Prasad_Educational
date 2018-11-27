@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4 style="background: green">
+    <marquee direction="right"> AddFaculity Details</marquee>
+</h4>
+<form action="/addfaculitydetails/" method="post" >
+    {% csrf_token %}
+
+<table align="center" border="2">
+
+    <tr>
+        <td>Id:
+            <input type="number" placeholder="Id" name="t1" value="{{ id }}" autocomplete="off" required>
+        </td>
+    </tr>
+    <tr>
+        <td>Name:
+            <input type="text" placeholder="Name"  name="t2" autocomplete="off" required>
+        </td>
+    </tr>
+    <tr>
+        <td>Gender:
+        <input type="radio" value="male" name="t5">Male
+        <input type="radio" value="female" name="t5">FeMale
+        </td>
+    </tr>
+    <tr>
+        <td>Contact no:
+            <input type="number"  placeholder="Contact no" autocomplete="off" name="t6" required>
+        </td>
+    </tr>
+    <tr>
+        <td>Course:<br>
+            <input type="checkbox" value="Python" name="t3">Python<br>
+            <input type="checkbox" value="Django" name="t3">Django<br>
+            <input type="checkbox" value="DataScience" name="t3">DataScience<br>
+            <input type="checkbox" value="PHP" name="t3">PHP<br>
+            <input type="checkbox" value="AWS" name="t3">AWS<br>
+            <input type="checkbox" value="Angular JS" name="t3">Angular JS<br>
+            <input type="checkbox" value="Java" name="t3">Java<br>
+            <input type="checkbox" value="UI Technologies" name="t3">UI Technologies<br>
+            <input type="checkbox" value="Hybernet" name="t3">Hybernet<br>
+            <input type="checkbox" value="Digital Marketing" name="t3">Digital Marketing<br>
+            (Choose Your Subjects)
+        </td>
+    </tr>
+    <tr>
+        <td>Experince:
+            <input type="number" placeholder="Experience" name="t4" required>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="submit" value="Register">
+        </td>
+    </tr>
+    <tr >
+        <td align="center">
+            {{ status }}
+        </td>
+    </tr>
+</table>
+    </form>
+</body>
+</html>

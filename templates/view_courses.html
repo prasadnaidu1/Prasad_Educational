@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4 style="background: green">
+    <marquee direction="right"> Course Details</marquee>
+<table align="center" border="1">
+<tr>
+    <th colspan="4">
+        Course Details
+    </th>
+</tr>
+    <tr>
+        <th>CourseName</th>
+        <th>CourseId</th>
+        <th>Coursefee(Rs)</th>
+        <th>CourseDuration(Days)</th>
+        <th>Update</th>
+        <th>Delete</th>
+
+    </tr>
+    {% for x in msg %}
+        <tr>
+        <td>{{ x.CourseName }}</td>
+        <td>{{ x.CourseId }}</td>
+        <td>{{ x.CourseFee }}</td>
+        <td>{{ x.CourseDuration }}</td>
+        <td>
+            <a href="/courseupdate/?update_id={{ x.CourseId }}">Update</a>
+        </td>
+        <td>
+            <form action="/coursedelete/" method="post">
+                {% csrf_token %}
+        <input type="submit" value="Delete">
+                <input type="hidden" value="{{ x.CourseId }}" name="delete_id">
+                </form>
+        </td>
+        </tr>
+    {% endfor %}
+
+<tr>
+    <form action="/coursecsv/" method="post">
+        {% csrf_token %}
+    <td colspan="4" align="center">
+        <input type="submit" value="Download">
+    </td>
+         </form>
+</tr>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/companydetails/" method="post">
+    {% csrf_token %}
+<table align="center" border="1">
+    <tr>
+        <th>Company Registratation Details </th>
+    </tr>
+    <tr>
+        <td>
+            <input type="number" placeholder="Company Id" name="n1" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="Company Name" name="n2" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+               <input type="text" placeholder="Company HR Name" name="n3" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="email" placeholder="Email Id" name="n4" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="number"  placeholder="Company ContactNo" name="n5" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="n6">
+                <option>--Company Purpose--</option>
+                <option>Product Based</option>
+                <option>Software Development</option>
+                <option>Education Purpose</option>
+                <option>Some other</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <textarea name="n7" >
+
+            </textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit"  value="Save">
+        </td>
+    </tr>
+</table>
+    </form>
+</body>
+</html>
